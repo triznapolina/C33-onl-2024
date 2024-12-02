@@ -1,6 +1,5 @@
 package lesson_3_homework;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Operators {
