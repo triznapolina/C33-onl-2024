@@ -74,6 +74,9 @@ public class MultiDimensionalArrays {
 
     }
 
+    //Task 2. Создать программу для раскраски шахматной доски с помощью цикла. Создать
+    //двумерный массив String 8х8. С помощью циклов задать элементам массива значения
+    //B(Black) или W(White).
     public static void SetTheSecondTask () {
 
         System.out.println("---------------------2-------------------------");
@@ -98,8 +101,9 @@ public class MultiDimensionalArrays {
 
     }
 
+    // * Task. Даны числа n и m. Создайте массив A[n][m] и заполните его змейкой
     public static void SetTheStarTask () {
-        System.out.println("---------------------3-------------------------");
+        System.out.println("---------------------***-------------------------");
         System.out.print("Enter amount of rows: ");
         Scanner input = new Scanner(System.in);
         int amountRows = input.nextInt();
