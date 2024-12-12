@@ -95,10 +95,10 @@ public class Operators {
                 if (enterValueNumber != 1) { // checking value greater then 1
                     isTrueValue = false; // closing data entry
                     int i = 1;
-                    int sumValueSquence = 0; // value of squence addition
+                    int sumValueSquence = 0; // value of sequence addition
                     for (; i<=enterValueNumber;i++) {  // iterating values from 1 to enterValueNumber
                         System.out.print(i);
-                        if (i != enterValueNumber) {   // writing the plus between the squence
+                        if (i != enterValueNumber) {   // writing the plus between the sequence
                             System.out.print(" + ");
                         }
                         sumValueSquence += i;  // add a value i to the sum
