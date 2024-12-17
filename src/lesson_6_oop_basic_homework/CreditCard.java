@@ -14,7 +14,7 @@ public class CreditCard {
     }
 
     // method, adding the amount
-    public void AddMoney (double someAmount) {
+    public void addMoney (double someAmount) {
         System.out.println("--------------Adding money--------------\n" + "Card: " + accountNumber);
         System.out.println("Initial amount is " + amountAccount);
         this.amountAccount += someAmount;
@@ -23,7 +23,7 @@ public class CreditCard {
     }
 
     // method, withdrawing the amount
-    public void WithdrawMoney (double someAmount) {
+    public void withdrawMoney (double someAmount) {
         System.out.println("----------Withdrawing money-----------\n" + "Card: " + accountNumber);
         System.out.println("Initial amount is " + amountAccount);
         this.amountAccount -= someAmount;
@@ -33,7 +33,7 @@ public class CreditCard {
     }
 
     // method, getting card's information
-    public void SetInformationAboutCard (){
+    public void setInformationAboutCard (){
         System.out.println("---------------------------------------------");
         System.out.println("The number account card: " + accountNumber + "\nThe amount of money: " + amountAccount);
     }
@@ -46,14 +46,14 @@ public class CreditCard {
         CreditCard thirdNumberCard = new CreditCard("2564-0000-25648-0215", 1458.02);
 
         // operation with money
-        firstNumberCard.AddMoney(25.52);
-        secondNumberCard.AddMoney(13.4);
-        thirdNumberCard.WithdrawMoney(5.82);
+        firstNumberCard.addMoney(25.52);
+        secondNumberCard.addMoney(13.4);
+        thirdNumberCard.withdrawMoney(5.82);
 
         // get current card's information
-        firstNumberCard.SetInformationAboutCard();
-        secondNumberCard.SetInformationAboutCard();
-        thirdNumberCard.SetInformationAboutCard();
+        firstNumberCard.setInformationAboutCard();
+        secondNumberCard.setInformationAboutCard();
+        thirdNumberCard.setInformationAboutCard();
 
 
     }
