@@ -16,17 +16,42 @@ public class TicTacToeGame {
         getInitialMessage();
 
         if ((getInputValue().nextLine()).equals("y")){
-            System.out.println("-----------------------------------------------------------------------------------");
+            System.out.println("---------------------------------------------------------------------------------");
             char[][] gameTable = createInitializeTable();
             drawTable(gameTable);
 
-            int dice = getRandomNumbers().nextInt(0, 21);
+            int dice = getRandomNumbers().nextInt(0, 9);
 
             if (dice >= 0 && dice <= 10){
                 makePlayerMove();
             } else {
                 makeAIMove();
             }
+
+
+            boolean isRunningGame = true;
+
+            while (isRunningGame) {
+                System.out.println("Would you like to continue? (y - Yes, the rest - No: " + "\u001b[2J");
+                if ((getInputValue().nextLine()).equals("y")){
+                    System.out.println("-------------------------------------------------------------------------------");
+                    drawTable(gameTable);
+                    clearTable();
+
+                    int newDice = getRandomNumbers().nextInt(0, 9);
+                    if (newDice >= 0 && newDice <= 10){
+                        makePlayerMove();
+                    } else {
+                        makeAIMove();
+                    }
+                }
+                else {
+                    isRunningGame = false;
+                    System.out.println("\u001B[31m\t" + "You have decided to leave the game. GOODBYE!" + "\u001B[0m");
+                }
+            }
+
+
         } else {
             System.out.println("\u001B[31m\t" + "You have decided to leave the game. GOODBYE!" + "\u001B[0m");
         }
@@ -60,6 +85,15 @@ public class TicTacToeGame {
             System.out.println();
         }
         System.out.println("\u001B[0m");
+    }
+
+    public static void clearTable(){
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                gameTable[i][j] = '*';
+            }
+        }
+
     }
 
     public static void makeAIMove() {
@@ -116,10 +150,6 @@ public class TicTacToeGame {
             System.out.println("No sides!");
             return;
         }
-
-
-
-
 
 
         if (isPlayerTurn()) {
