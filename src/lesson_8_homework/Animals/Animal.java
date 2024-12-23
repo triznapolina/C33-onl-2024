@@ -1,6 +1,6 @@
 package lesson_8_homework.Animals;
 
-public class Animal {
+public abstract class Animal {
 
     private String familyRang;  // animal's families, f.e feline family (cats)
     private String typeName;    // type of animal, f.e cat, dog
@@ -19,8 +19,8 @@ public class Animal {
         return nickName;
     }
 
-    public void eat() {};
-    public void voice() {};
+    public abstract void eat();
+    public abstract void voice();
 
     @Override
     public String toString() {
