@@ -1,4 +1,4 @@
-package Task_3_Cloneable;
+package lesson_9_homework.Task_3_Cloneable;
 
 public class Cat implements Cloneable{
 

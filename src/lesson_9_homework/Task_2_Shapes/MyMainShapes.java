@@ -1,7 +1,5 @@
 package lesson_9_homework.Task_2_Shapes;
 
-import Task_3_Cloneable.Cat;
-
 public class MyMainShapes {
 
     public static void main(String[] args)  {
