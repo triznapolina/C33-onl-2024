@@ -15,8 +15,8 @@ public class Triangle extends Figure{
     }
 
 
-    // Условие существование треугольника: Треугольник существует только тогда, когда сумма любых двух
-    // его сторон больше третьей. Если условие не соблюдено, такого треугольника не существует
+    // The condition for the existence of a triangle: A triangle exists only if the sum of any two
+    // of its sides is greater than the third. If the condition is not met, no such triangle exists.
 
     private boolean verifyExistence() {
         return lengthFirstSide + lengthSecondSide > lengthThirdSide &&

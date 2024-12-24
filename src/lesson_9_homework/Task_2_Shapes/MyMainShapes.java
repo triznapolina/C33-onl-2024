@@ -4,8 +4,8 @@ public class MyMainShapes {
 
     public static void main(String[] args)  {
 
-        // При задании сторон треугольника учитывается условие его существования: Треугольник существует только
-        // тогда, когда сумма любых двух его сторон больше третьей.
+        // When defining the sides of a triangle, the condition of its existence is taken into account:
+        // The triangle exists only when the sum of any two sides of it is greater than the third.
         Figure[] shapes = new Figure[] {
                 new Circle("circle 1", 8),
                 new Triangle("triangle 1",14,6,7),
