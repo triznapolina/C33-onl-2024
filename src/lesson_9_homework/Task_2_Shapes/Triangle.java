@@ -39,7 +39,7 @@ public class Triangle extends Figure{
     }
 
 
-    // использование формулы Герона
+    // using formula's Geron
     @Override
     public void calculateSquare() {
 
