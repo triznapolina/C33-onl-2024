@@ -1,17 +1,81 @@
 package lesson_10_homework;
 
-public class MainUser {
-    public static void main(String[] args) {
-        User user1 = new User("polina", "java");
-        User user2 = new User("polina", "java");
-        User user3 = new User("maria", "java");
+import java.util.Scanner;
 
-        System.out.println("User 1: " + user1);
-        System.out.println("User 2: " + user2);
-        System.out.println("User 3: " + user3);
+public class MainUser {
+
+    private static User[] users = new User[3];
+
+    public static void main(String[] args) throws CloneNotSupportedException {
+
+        initializeUsers();
+
+        for (User  user : users) {
+            System.out.println("User: " + user);
+        }
 
         System.out.println("-------------------------------------------------");
-        System.out.println("user 1's data equal to user 2's? :" + user1.equals(user2));
-        System.out.println("user 1's data equal to user 3's? :" + user1.equals(user3));
+        System.out.println("user 1's data equal to user 2's? :" + users[0].equals(users[1]));
+        System.out.println("user 1's data equal to user 3's? :" + users[0].equals(users[2]));
+
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter person's id: ");
+        int userId = scanner.nextInt();
+        scanner.nextLine();
+
+        User originalUser  = findUserById(userId);
+        if (originalUser  == null) {
+            System.out.println("User  was not found");
+            return;
+        }
+
+        System.out.println("Before clone:");
+        System.out.println(originalUser );
+
+        System.out.print("Enter type (shallow/deep)? :");
+        String cloneType = scanner.nextLine();
+
+        User clonedUser  = null;
+        try {
+            if ("shallow".equalsIgnoreCase(cloneType)) {
+                clonedUser  = (User) originalUser .clone();
+            } else if ("deep".equalsIgnoreCase(cloneType)) {
+                clonedUser  = originalUser .deepClone();
+            } else {
+                System.out.println("Enter shallow or deep not other");
+                return;
+            }
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("After clone:");
+        System.out.println(clonedUser);
     }
+
+    private static void initializeUsers() {
+        users[0] = new User(1, "polina", "java");
+        users[1] = new User(2, "polina", "java");
+        users[2] = new User(3, "ivan", "programmer");
+    }
+
+    private static User findUserById(int id) {
+        for (User  user : users) {
+            if (user != null && user.getIdUser () == id) {
+                return user;
+            }
+        }
+        return null;
+    }
+
 }
+
+
+
+
+
+
+
+
+
