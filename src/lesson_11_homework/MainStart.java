@@ -38,14 +38,25 @@ public class MainStart {
         System.out.println("-Task *------------------------------------");
         System.out.println("Enter a comma-separated string of words (for example: apple, pear, orange): ");
         String inputLine = scanner.nextLine();
-        System.out.println("Enter the number of the checking word: ");
-        int wordIndex = scanner.nextInt();
+
+        int wordIndex = 0;
+        boolean isCorrectIndex = false;
+
+        while (!isCorrectIndex) {
+            System.out.println("Enter the number of the checking word: ");
+            wordIndex = scanner.nextInt();
+
+            String[] words = inputLine.split(",");
+            if (wordIndex < 1 || wordIndex > words.length) {
+                System.out.println("In the line " + words.length + " words, please enter a valid index.");
+            } else {
+                isCorrectIndex = true;
+            }
+        }
         SetTheStarTask(inputLine, wordIndex);
 
         scanner.close();
     }
-
-
 
 
     public static void SetTheFifthTask (String input) {
@@ -62,28 +73,21 @@ public class MainStart {
 
 
     public static void SetTheStarTask(String input, int index) {
-
         String[] words = input.split(",");
 
-        if (index < 1 || index > words.length) {
-            System.out.println("In the line" + words.length + " words, \nEnter index again ");
-            return;
-        }
-
-        String wordToCheck = words[index - 1];
+        String wordToCheck = words[index - 1].trim();
 
         if (isPalindrome(wordToCheck)) {
-            System.out.println(wordToCheck.trim() + " is palindrome");
+            System.out.println(wordToCheck + " is palindrome");
         } else {
-            System.out.println(wordToCheck.trim() + " is not palindrome");
+            System.out.println(wordToCheck + " is not palindrome");
         }
     }
 
     public static boolean isPalindrome(String word) {
-        String normalizedWord = word.trim().toLowerCase();
+        String normalizedWord = word.toLowerCase();
         String reversedWord = new StringBuilder(normalizedWord).reverse().toString();
         return normalizedWord.equals(reversedWord);
 
     }
-
 }
