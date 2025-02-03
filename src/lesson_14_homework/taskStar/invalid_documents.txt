@@ -1,0 +1,5 @@
+doc123456789014 Invalid document number: must begin with 'docnum' or 'contract', the length is strictly 15 characters, without special characters
+contract!@#4567 Invalid document number: must begin with 'docnum' or 'contract', the length is strictly 15 characters, without special characters
+document1234567 Invalid document number: must begin with 'docnum' or 'contract', the length is strictly 15 characters, without special characters
+contract123456789012345 Invalid document number: must begin with 'docnum' or 'contract', the length is strictly 15 characters, without special characters
+contract982100 Invalid document number: must begin with 'docnum' or 'contract', the length is strictly 15 characters, without special characters
