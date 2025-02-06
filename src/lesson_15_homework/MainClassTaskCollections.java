@@ -6,9 +6,9 @@ public class MainClassTaskCollections {
 
     public static void main(String[] args) {
 
-        //setTheFirstTak();
-        //setTheSecondTask();
-        //setTheThirdTask();
+        setTheFirstTak();
+        setTheSecondTask();
+        setTheThirdTask();
         setTheStarTask();
     }
 
