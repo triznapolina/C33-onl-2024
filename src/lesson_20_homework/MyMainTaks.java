@@ -1,5 +1,8 @@
 package lesson_20_homework;
 
+import lesson_20_homework.StarTask.Buyer;
+import lesson_20_homework.StarTask.Manufacturer;
+import lesson_20_homework.StarTask.Shop;
 import lesson_20_homework.task1.ThreadMaximum;
 import lesson_20_homework.task1.ThreadMinimum;
 import lesson_20_homework.task2.BubbleSorting;
@@ -16,8 +19,9 @@ public class MyMainTaks {
     // - Task 1. Package: task 1 - Thread Class get maximum in ThreadMaximum,Thread Class get minimum in ThreadMinimum;
     // - Task 2. Package: task 2 - Thread Class of insertion sort in SortingInserts,
     // Thread Class of Selection sort in SortingChoice, Thread Class of bubble sort in BubbleSorting;
+    // - Task *. Package: task StarTask - Thread buy Class in Buyer, Thread manufacture Class in Manufacture,
+    // Thread realization of Shop in Shop class.
     public static void main(String[] args) throws InterruptedException {
-
 
         int[] arrayNumbers = setTheFirstAndSecondTasks();
 
@@ -50,14 +54,19 @@ public class MyMainTaks {
 
 
         System.out.println("-Task *----------------------");
-
-
-
-
-
-
-
-
+        Shop shop = new Shop();
+        Manufacturer manufacturer = new Manufacturer(shop);
+        Buyer buyer = new Buyer(shop);
+        Thread manufacturerThread = new Thread(manufacturer);
+        Thread buyerThread = new Thread(buyer);
+        manufacturerThread.start();
+        buyerThread.start();
+        try {
+            manufacturerThread.join();
+            buyerThread.join();
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: " + e.getMessage());
+        }
 
 
     }
