@@ -65,7 +65,7 @@ public class MyMainTaks {
             manufacturerThread.join();
             buyerThread.join();
         } catch (InterruptedException e) {
-            System.out.println("InterruptedException: " + e.getMessage());
+            System.out.println("InterruptedExceptions: " + e.getMessage());
         }
 
 
